@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Sales prediction Result</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    </head>
+<body>
+    <h2>Predicted Next Month's Sales: {{ prediction }}</h2>
+
+    <h3>Your Input Data:</h3>
+    <ul>
+        <li>Last Month Sales: {{ data['Last_month_sales'] }}</li>
+        <li>Product Supervisor Review: {{ data['Product_supervisor_review'] }}</li>
+        <li>Product Supervisor Product Recommendation: {{ data['Product_supervisor_product_recommendation'] }}</li>
+        <li>Product Seniority: {{ data['Product_seniority'] }}</li>
+        <li>Direct Competitor Sales: {{ data['Direct_competitor_sales'] }}</li>
+        <li>Product Market Position: {{ data['Product_market_position'] }}%</li>
+        <li>Product Competitor Seniority: {{ data['Product_competitor_seniority'] }}</li>
+    </ul>
+
+    <a href="/">Go back</a>
+</body>
+</html>

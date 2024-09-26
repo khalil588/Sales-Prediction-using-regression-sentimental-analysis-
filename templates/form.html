@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Your Form</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <h2>Enter Product Data to Predict Next Month's Sales</h2>
+    <form action="/predict" method="POST">
+        <label>Last Month Sales:</label>
+        <input type="number" name="last_month_sales" required><br>
+        
+        <label>Product Supervisor Review:</label>
+        <textarea name="product_supervisor_review" required></textarea><br>
+
+        <label>Product Supervisor Product Recommendation:</label>
+        <select name="product_recommendation" required>
+            <option value="more">More</option>
+            <option value="less">Less</option>
+            <option value="same">Same</option>
+        </select><br>
+
+        <label>Product Seniority:</label>
+        <select name="product_seniority" required>
+            <option value="new">New</option>
+            <option value="old">Old</option>
+        </select><br>
+
+        <label>Direct Competitor Sales:</label>
+        <input type="number" name="direct_competitor_sales" required><br>
+
+        <label>Product Market Position (percentage):</label>
+        <input type="number" step="0.01" name="market_position" required><br>
+
+        <label>Product Competitor Seniority:</label>
+        <select name="competitor_seniority" required>
+            <option value="new">New</option>
+            <option value="old">Old</option>
+        </select><br>
+
+        <input type="submit" value="Predict Sales">
+    </form>
+</body>
+</html>
